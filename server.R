@@ -49,9 +49,7 @@ server <- function(input, output) {
   
   url <- a("Click here!", href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html")
   output$tab <- renderUI({
-    tagList("The scores of the tweets are based on a list of positive and negative words based on Liu 
-            and Hu opinion lexicon. Each words has certain scores, ranging from 0 to 3, depending on its category.
-            .The dataset can be obtained from this link:", url)
+    tagList(url)
   })
   
   # Display sentiment analysis in tabular format
@@ -198,22 +196,12 @@ server <- function(input, output) {
   output$histNeg<- renderPlot({ hist(final_df()$Negative, col=rainbow(10), main="Negative Sentiment", xlab = "Negative Score") })
   output$histScore<- renderPlot({ hist(final_df()$Score, col=rainbow(10), main="Overall Score", xlab = "Overall Score") })	
   
-  #exp for histogram
-  output$histogramExp <- renderUI({
-    tagList("Overall Score - Depending on the frequency of tweets against the score, the more positive the score, 
-            the more positive is the sentiment and vice versa.")
-  })
   
   #pie chart
   slices <- reactive ({slices <- c(sum(final_df()$Positive), sum(final_df()$Negative)) })
   test<- c("Postive", "Negative")
   labels<- reactive(paste0(test, " Score =", {labels <- c(sum(final_df()$Positive), sum(final_df()$Negative))},""))
   output$piechart <- renderPlot({ pie(slices(), labels = labels(), col=rainbow(length(labels())),explode=0.00, main="Sentiment Analysis (Pie Chart)") })
-  
-  #pie chart explanation
-  output$pieExp <- renderText({ 
-    "Formula for each category"
-  })
   
   
   #showing raw tweets
