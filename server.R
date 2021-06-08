@@ -35,10 +35,10 @@ server <- function(input, output) {
   }
   
   # For accessing the API, enter the key and token.
-  api_key <- "DJt4xHpvDjlOImVIWmVBwjG0W"
-  api_secret <- "cyPty7bSajiZ87ybDHbyRyf6QdVVKLhsc7ujfBKuExbwAoTD0D"
-  access_token <- "4336372933-xhj7p1wOi7kjwtejIf5ZvVc0XpKqFMRPZ0F45PT" 
-  access_token_secret <- "d8Q6b0rDupmziUNPoTrVvnRtT651u2IIgBteit1351VUm"
+  api_key <- "########"
+  api_secret <- "########"
+  access_token <- "#######" 
+  access_token_secret <- "#######"
   
   # After setting up credentials, setup access using OAUTH protocol
   setup_twitter_oauth(api_key, api_secret, access_token, access_token_secret)
