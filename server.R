@@ -47,9 +47,17 @@ server <- function(input, output) {
   positive = scan('positive_words.txt', what='character', comment.char=';')
   negative = scan('negative_words.txt', what='character', comment.char=';')
   
+  
+  #dataset link
   url <- a("Click here!", href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html")
   output$tab <- renderUI({
     tagList(url)
+  })
+  
+  #github link
+  url2 <- a("Github repository", href="https://github.com/NurIzzati11/Hashtaglyzer")
+  output$github <- renderUI({
+    tagList(url2)
   })
   
   # Display sentiment analysis in tabular format

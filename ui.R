@@ -22,7 +22,10 @@ ui <- fluidPage(headerPanel(" Hashtaglyzer - Twitter Sentiment Analysis"),
                              strong("About"),p("Hashtaglyzer was developed with the goal to see sentiments of
                                                 twitter users based on the hashtags they used. Be it products or popular issue,
                                                 this application will show your the twitter users' sentiment on said topic!"
-                                               ,style = "font-family: 'times'; font-si16pt"),
+                                               ,style = "font-family: 'times'; font-si16pt"), 
+                             br(),
+                             p("Here's the link to our github repository:"
+                               ,style = "font-family: 'times'; font-si16pt"), uiOutput("github"),
                              br(),
                              strong("How to use it?"),p("1. Enter your hashtags along with the symbol '#'."
                                                         ,style = "font-family: 'times'; font-si16pt"),
