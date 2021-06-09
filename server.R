@@ -1,6 +1,8 @@
 library(shiny)
 library(shinythemes)
 library(rtweet)
+library(twitteR)
+library(plyr)
 library(dplyr)
 library(glue)
 library(reactable)
@@ -16,9 +18,9 @@ library(wordcloud2)
 library(gridExtra)
 library(syuzhet)
 library(plotrix)
-library(twitteR)
-library(plyr)
-library(reactable)
+
+
+
 
 
 server <- function(input, output) {
